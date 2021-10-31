@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camino Universitario Distrital Adelita De Char</title>
+    <link rel="stylesheet" href="../static/css/estilos_V10-12.css">
+</head>
+<body>
+    <div id="contenedor">
+        <div id="header">
+            <nav class="navegacion">
+                <ul class="menu">
+                    <li><a href="/2interfazAdministrador">Plataforma Administrador</a></li>
+                    <li><a href="/3registroDePacientes">Registro paciente</a>
+                    
+                    </li>
+
+                    <li><a href="/4registroDeMedicos">Registro medicos</a></li>
+                </ul>
+            </nav>    
+        </div>
+                
+        
+        <div class="contenido">
+            <div id="Cost_izq">
+                <h3 class="Titulo_AC">Camino Universitario Distrital Adelita de Char</h3>
+
+                <label for="Medico" class="Medico">Administrador</label>
+                <label for="Name_medico" class="Medico"></label>
+            </div>
+            <div id="Section_cent-5">
+                <form id="formulario_cons_rm" name="formulario_cons_rm" action="" method="POST">
+                    {{form.hidden_tag()}}
+
+                    <h2 class="form_titulo">Consulta de medicos</h2>
+                    <br>
+                    <div class="contenedor-inputs">
+
+                        <div>
+                            {{form.boton_buscar4()}}
+
+                        </div>
+
+                    </div>         
+                </form>
+            </div>
+            <div id="Cost_Der-5">
+                <h2 class="Titulo_CD"> Listado de medicos  </h2>
+                <table class="Tablas">
+                    <caption>Tabla de consulta de medicos</caption>
+                    <tr>
+                        <th>Id medico</th>
+                        <th>Documento</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Cargo </th>
+            
+                    </tr>
+                    {% for i in row %}
+                    <tr>
+                        <td>{{i['Id_Medico']}}</td>
+                        <td>{{i['Num_Documento_M']}}</td>
+                        <td>{{i['Nombre_M']}}</td>
+                        <td>{{i['Estado_M']}}</td>
+                        <td>{{i['Cargo']}}</td>
+
+                    </tr>
+                    {% endfor %}
+                    
+                </table>
+
+               
+
+
+
+            </div>
+            
+        </div>
+        <br>
+            
+
+        <div id="footer">
+            <br>
+            <p class="Pie_de_pagina"> Clinica Camino Universitario Distrital Adelita de Char </p>
+            <p class="Pie_de_pagina"> Correo electronico atencionusuario@adelita.com.co </p>
+            <p class="Pie_de_pagina"> Telefono: 038 287456 - Dirección: Av siempre viva 123 Baranquilla </p>
+        </div>
+    </div>
+
+
+</body>
+</html>

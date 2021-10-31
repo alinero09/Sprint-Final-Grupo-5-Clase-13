@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camino Universitario Distrital Adelita De Char</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </Script>
+
+    
+</head>
+
+
+
+<body>
+
+<div id="areaA">
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/11interfazPacientes">Plataforma Pacientes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+        <div class="ms-auto">
+          {% if 'user' in session %}
+              <span class="navbar-text p-2 bd-highlight"> {{ session['user']}} </span>
+              <span class="navbar-text p-2 bd-highlight"> <a href="{{'logout'}}">Salir</a></span> 
+          {% else %}
+              <span class="navbar-text p-2 bd-highlight"> <a href="{{'login'}}">Login</a></span>
+              <span class="navbar-text p-2 bd-highlight"> <a href="{{'addUser'}}">Registro</a></span>
+          {% endif %}
+            
+          </div>
+
+
+
+
+
+
+      </div>
+    </div>
+  </nav>
+
+    </div>      
+
+
+<div id="areaB">
+
+
+
+
+            <div class="d-flex">
+              
+                <div id="areaA" class="card" style="width: 20%; margin: 10% 6% 1% 25%">
+                    <img src="../static/images/crearCitas.jpeg" class="card-img-top" alt="Registro de Usuarios">
+                    <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href= "/12crearCitas" class="btn btn-primary col-sm-12 mt-10%">Crear citas</a>
+                    </div>
+                </div>
+              
+
+                
+                <div id="areaA" class="card" style="width: 20%; margin: 10% 2% 1% 1%; ">
+                    <img src="../static/images/buscarCitas.jpeg" class="card-img-top" alt="Ver usuarios" >
+                    <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <a href="/13buscarCitas" class="btn btn-primary col-sm-12 mt-10%">Buscar citas</a>
+                    </div>
+                </div>
+
+                      
+            
+           
+
+    </body>
+    </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista_12</title>
+    <link rel="stylesheet" href="../static/css/estilos_V10-12.css">
+    <script src="{{ url_for('static',filename='js/validaciones.js')}}"></script>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="header">
+            <nav class="navegacion">
+                <ul class="menu">
+                    <li><a href="/11interfazPacientes">Plataforma pacientes</a></li>
+                    <li><a href="/12crearCitas">Crea</a></li>
+                    <li><a href="/13buscarCitas">Citas</a></li>
+                </ul>
+            </nav>    
+        </div>
+                
+        
+        <div class="contenido">
+            <div id="Cost_izq">
+                <h3 class="Titulo_AC">Camino Universitario Distrital Adelita de Char</h3>
+
+                <label for="Medico" class="Medico">Paciente</label>
+                <label for="Name_medico" class="Medico"></label>
+            </div>
+            <div id="Section_cent-3">
+              
+              <h2 class="form_titulo">Creación de Citas</h2>
+              <br>
+              <form id="formulario_pac_cc" name="formulario_pac_cc" action="" method="POST">
+                {{form.hidden_tag()}}
+
+                <div>
+                  {{form.Id_Citas.label}}
+                  {{form.Id_Citas()}}
+                </div>
+                <div>
+                  {{form.Id_Paciente.label}}
+                  {{form.Id_Paciente()}}
+                </div>
+                <div>
+                  {{form.Id_Medico.label}}
+                  {{form.Id_Medico()}}
+                </div>
+                <div>
+                  {{form.Nombre_P.label}}
+                  {{form.Nombre_P()}}
+                </div>
+                <div>
+                  {{form.Num_Documento_P.label}}
+                  {{form.Num_Documento_P()}}
+                </div>
+                <div>
+                  {{form.Nombre_M.label}}
+                  {{form.Nombre_M()}}
+                </div>
+                <div>
+                  {{form.Fecha_C.label}}
+                  {{form.Fecha_C()}}
+                </div>
+                <div>
+                  {{form.Hora_C.label}}
+                  {{form.Hora_C()}}
+                </div>
+                <div>
+                  {{form.Calificacion_cit.label}}
+                  {{form.Calificacion_cit()}}
+                </div>
+                <div>
+                  {{form.botonGuardar()}}
+                  {{form.botonEliminar()}}
+                </div>
+
+
+              </form>
+                
+    
+            </div>
+        </div>
+            
+
+        <div id="footer">
+            <br>
+            <p class="Pie_de_pagina"> Clinica Camino Universitario Distrital Adelita de Char </p>
+            <p class="Pie_de_pagina"> Correo electronico atencionusuario@adelita.com.co </p>
+            <p class="Pie_de_pagina"> Telefono: 038 287456 - Dirección: Av siempre viva 123 Baranquilla </p>
+        </div>
+    </div>
+
+
+</body>
+</html>

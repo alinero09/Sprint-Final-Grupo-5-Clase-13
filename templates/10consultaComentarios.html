@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camino Universitario Distrital Adelita De Char</title>
+    <link rel="stylesheet" href="../static/css/estilos_V10-12_2.css">
+    <script src="{{ url_for('static',filename='js/validaciones.js')}}"></script>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="header">
+            <nav class="navegacion">
+                <ul class="menu">
+                    <li><a href="/7interfazMedicos">Plataforma Medicos</a></li>
+                    <li><a href="/8consultaPacientes">Pacientes</a>
+                    
+                    </li>
+                    <li><a href="/9consultaCitas">Citas</a>
+                    
+                    </li>
+                    <li><a href="/10consultaComentarios">Comentarios</a></li>
+                </ul>
+            </nav>    
+        </div>
+                
+        
+        <div class="contenido">
+            
+           
+            <div id="Cost_izq">
+                <h3 class="Titulo_AC">Camino Universitario Distrital Adelita de Char</h3>
+
+                <label for="Medico" class="Medico">Medico</label>
+                <label for="Name_medico" class="Medico"></label>
+            </div>
+            <div id="Section_cent" name="formulario_cons_pac" action="formulario_cons_pac" method="POST">
+                
+                <form id="formulario_cons_com" name="formulario_cons_com" action="" method="POST">
+                    {{form.hidden_tag()}}
+                    <h2 class="form_titulo">Consulta un paciente</h2>
+                    <br>
+                    <div class="contenedor-inputs">
+                        <div>
+                            {{form.Id_paciente.label}}
+                            {{form.Id_paciente()}}
+                        </div>
+                        <div>
+                            {{form.Id_Medico.label}}
+                            {{form.Id_Medico()}}
+                        </div>
+                        <div>
+                            {{form.Id_Comentarios.label}}
+                            {{form.Id_Comentarios()}}
+                        </div>
+                        <div>
+                            {{form.Nombre_p.label}}
+                            {{form.Nombre_p()}}
+                        </div>
+                        <div>
+                            {{form.Num_Documento_P.label}}
+                            {{form.Num_Documento_P()}}
+                        </div>
+                        <div>
+                            {{form.Nombre_M.label}}
+                            {{form.Nombre_M()}}
+                        </div>
+                        <div>
+                            {{form.Fecha_C.label}}
+                            {{form.Fecha_C()}}
+                        </div>
+                        <div>
+                            {{form.Comentario.label}}
+                            {{form.Comentario()}}
+                        </div>
+                        <br>
+                        <div>
+                            {{form.botonCrear()}}
+                            {{form.botonActualizar()}}
+                            {{form.botonEliminar()}}
+                            {{form.botonListarTodos()}}
+                            
+                        </div>
+                        
+
+                    </div>         
+                </form>
+            </div>
+            <div id="Cost_Der">
+                <h2 class="Titulo_CD"> Listado de pacientes  </h2>
+                <table class="Tablas">
+                    <caption>Tabla de consulta de pacientes</caption>
+                    <tr>
+                        <th>Id com</th>
+                        <th>Nombre Medico</th>
+                        <th>Nombre Paciente</th>
+                        <th>Documento Paciente</th>
+                        <th>Fecha</th>
+                        <th>Comentario</th>
+            
+                    </tr>
+                    {% for i in row %}
+                    <tr>
+                        <td>{{i['Id_comentarios']}}</td>
+                        <td>{{i['Nombre_M']}}</td>
+                        <td>{{i['Nombre_P']}}</td>
+                        <td>{{i['Num_Documento_P']}}</td>
+                        <td>{{i['Fecha_C']}}</td>
+                        <td>{{i['Comentario']}}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </table>
+
+            </div>
+            
+        </div>
+            
+
+        <div id="footer">
+            <br>
+            <p class="Pie_de_pagina"> Clinica Camino Universitario Distrital Adelita de Char </p>
+            <p class="Pie_de_pagina"> Correo electronico atencionusuario@adelita.com.co </p>
+            <p class="Pie_de_pagina"> Telefono: 038 287456 - Dirección: Av siempre viva 123 Baranquilla </p>
+        </div>
+    </div>
+</body>
+</html>
